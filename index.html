@@ -25,7 +25,8 @@
     </style>
 </head>
 
-<body><a href="#node-list">Skip to node list</a>
+<body>
+    <a href="#node-list">Skip to node list</a>
     <h1>NNTPChan</h1>
     <p><a href="https://github.com/majestrate/nntpchan">NNTPChan</a> is the combination of the tried and true <a href="https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol">network news transfer protocol</a> and the concept of an <a href="https://en.wikipedia.org/wiki/Imageboard">imageboard</a>. The core software, <a href="https://github.com/majestrate/srndv2">SRNDv2</a>, processes posts and then propagates them through out the Overchan network (this is a loose term that describes a federation of NNTPChan nodes).</p>
     <h2>Why NNTPChan?</h2>
@@ -37,7 +38,7 @@
         </li>
         <li>
             <h4>NNTPChan is censorship resistant by design</h4>
-            <p>Classical imageboards have one administrative organization. Each node stores a list trusted moderators. This can differ between each node. That means a node can continue to accept posts from all of its peers, but have stricter moderation.</p>
+            <p>Because of the distributed nature of NNTP, the messages shared accross the network cannot be outright censored. This differs from monolith imageboards in that administration isn't the responsibility of a single organization. Each node maintains its own list of trusted moderators and the rules that determine whether a post should be deleted. Moderation is handled in the form of "control messages" signed with a public key. Nodes can choose to trust a public key which has the effect of accepting and executing control messages (e.g. a delete control message with a trusted signed key would delete the message).</p>
         </li>
         <li>
             <h4>NNTPChan allows for a customized experience</h4>
@@ -45,7 +46,7 @@
         </li>
         <li>
             <h4>NNTPChan is easy to operate</h4>
-            <p>It's easy to run NNTPChan. All you need is the golang binary so you can compile SRNDv2 and PostgreSQL. If you need any help, join us in #nntpchan on freenode or rizon or #overchan on <a href="https://geti2p.net/en/faq#irc">irc2p</a>. </p>
+            <p>NNTPChan requires few resources. The golang library is required to compile SRNDv2. PostgreSQL or Redis is required for storing posts. If you need any help, join us in #nntpchan on freenode or rizon or #overchan on <a href="https://geti2p.net/en/faq#irc">irc2p</a>. </p>
         </li>
     </ul>
     <h2 id="node-list">NNTPChan nodes</h2>
